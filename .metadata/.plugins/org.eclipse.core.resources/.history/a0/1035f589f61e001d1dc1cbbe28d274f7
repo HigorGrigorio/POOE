@@ -1,0 +1,5 @@
+package com.purchaseapp.dao;
+
+public class ClientDAO {
+
+}

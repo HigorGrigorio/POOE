@@ -1,0 +1,49 @@
+package com.purchaseapp.dao;
+
+import java.util.List;
+
+import javax.persistence.EntityManager;
+
+import com.purchaseapp.models.Client;
+
+public class ClientDAO {
+	private EntityManager entityManager;
+	
+	public ClientDAO(EntityManager entityManager) {
+		this.setEntityManager(entityManager);
+	}
+	
+	public void save(Client client) {		
+		getEntityManager().persist(client);
+	}
+	
+	public Client update(Client client) { 
+		return getEntityManager().merge(client);
+	}
+	
+	public void delete(Long id) {
+		Client client = getById(id);
+		getEntityManager().remove(client);
+	}
+	
+	public Client getById(Long id) {
+		return getEntityManager().find(Client.class, id);
+	}
+	
+	public List<Client> getAll() {
+		return null;
+	}
+	
+	public List<Client> getAllSortedByName() {
+		return null;
+	}
+
+	public EntityManager getEntityManager() {
+		return entityManager;
+	}
+
+	public void setEntityManager(EntityManager entityManager) {
+		this.entityManager = entityManager;
+	} 
+	
+}

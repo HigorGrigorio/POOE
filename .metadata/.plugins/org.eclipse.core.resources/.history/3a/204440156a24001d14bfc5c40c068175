@@ -1,0 +1,54 @@
+package com.purchaseapp.views;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+import java.io.Serial;
+import java.io.Serializable;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+
+public class PurchasesView extends JFrame {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -5003447417334725531L;
+	
+	private JPanel contentPane;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					PurchasesView frame = new PurchasesView();
+					frame.setVisible(true);
+					
+					Byte integer= 10;
+					System.out.println(integer);
+					System.out.println(integer.byteValue());
+					
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public PurchasesView() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 450, 300);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		contentPane.setLayout(new BorderLayout(0, 0));
+		setContentPane(contentPane);
+	}
+
+}

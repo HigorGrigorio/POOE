@@ -1,0 +1,38 @@
+package com.purchaseapp.services;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityTransaction;
+import javax.persistence.PersistenceContext;
+
+import com.purchaseapp.dao.UserDAO;
+import com.purchaseapp.models.User;
+import com.purchaseapp.persistence.ConnectionDataBank;
+
+public class UserService {
+	@PersistenceContext(unitName="purchaseapp")
+	 private final EntityManager entityManager;
+	 
+	 public UserService() {
+		 entityManager = ConnectionDataBank.getConnection().getEntityManager();
+	 }
+	 
+	 public void showConnectionBank() {
+		 EntityTransaction transaction = entityManager.getTransaction();
+		 
+		 if(entityManager != null) {
+			 System.out.println(entityManager.toString());
+		 }
+		 
+		 if (transaction != null)
+		 {
+			 System.out.println("Connectado!");
+		 }
+	 }
+
+	public void add(User user) {
+		System.out.println(user.toString());
+		// TODO: edit entityManager
+		UserDAO dao = new UserDAO(entityManager);
+		dao.add(user);
+	}
+}

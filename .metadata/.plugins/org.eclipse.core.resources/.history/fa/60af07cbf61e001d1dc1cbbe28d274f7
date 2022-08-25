@@ -1,0 +1,9 @@
+package com.purchaseapp.dao;
+
+import javax.persistence.EntityManager;
+
+public class ClientDAO {
+	private EntityManager entityManager;
+	
+	
+}

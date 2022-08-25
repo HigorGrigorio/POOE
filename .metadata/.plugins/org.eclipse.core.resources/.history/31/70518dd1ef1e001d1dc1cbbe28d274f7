@@ -1,0 +1,5 @@
+package com.purchaseapp.models;
+
+public class Client {
+
+}
